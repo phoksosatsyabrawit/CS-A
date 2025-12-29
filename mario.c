@@ -1,22 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int get_size();
+
+void print_grid(int size);
+
 int main(void)
 {
-  char q [5];
+    //Get size of grid
+    int n = get_size();
+    //Print grid of bricks
+    print_grid(n);
+}
+
+int get_size(void)
+{
+  char s [5];
   int n;
   do
   {
-    printf("Size: ");
-    fgets(q, sizeof(q), stdin);
-    n = atoi(q);
+    printf("size: ");
+    fgets(s, sizeof(s), stdin);
+    n = atoi(s);
   }
-  while (n<1);
-  for (int i=0; i<n; i++)
+  while ( n < 1 );
+  return n;
+}
+
+void print_grid(int size)
+{
+  for (int i=0; i < size; i++)
   {
-    for (int j=0; j<n; j++)
+    for (int j=0 j < size; j++)
     {
-        printf("#");
+      printf("#");
     }
     printf("\n");
   }
