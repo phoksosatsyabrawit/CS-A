@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int get_int (const char *prompt);
-char get_string (const char *string);
+char *get_string (const char *string);
 
 int main (void)
 {
-    char anw = get_string("What's your name: ");
-    printf("%s\n", anw);
+    char *anw = get_string("What's your name? ");
+
+    printf("hello, %s", anw);
+    //free(anw);
 }
 
 int get_int (const char *prompt)
@@ -18,10 +21,13 @@ int get_int (const char *prompt)
     return atoi(p);
 }
 
-char get_string (const char *string)
+char *get_string (const char *string)
 {
-    char s [32];
+    char buff [32];
     printf("%s", string);
-    fgets(s, sizeof(s), stdin);
-    return strtof(string);
+    fgets (buff, sizeof(buff), stdin);
+
+    char *result = malloc(strlen(buff));
+    strcpy (result, buff);
+    return result;
 }
