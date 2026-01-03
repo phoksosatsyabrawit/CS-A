@@ -10,7 +10,6 @@ int main (void)
     char *anw = get_string("What's your name? ");
 
     printf("hello, %s", anw);
-    //free(anw);
 }
 
 int get_int (const char *prompt)
