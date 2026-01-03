@@ -8,7 +8,6 @@ char *get_string (const char *string);
 int main (void)
 {
     char *anw = get_string("What's your name? ");
-
     printf("hello, %s", anw);
 }
 
@@ -26,7 +25,7 @@ char *get_string (const char *string)
     printf("%s", string);
     fgets (buff, sizeof(buff), stdin);
 
-    char *result = malloc(strlen(buff));
+    char *result = malloc(strlen(buff) + 1);
     strcpy (result, buff);
     return result;
 }
