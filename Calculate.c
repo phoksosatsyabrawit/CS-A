@@ -1,15 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int get_int(const char *prompt);
+
 int main(void)
 {
-    char s [13];
-    long x,y;
-    printf("x: ");
-    fgets(s, sizeof(s), stdin);
-    x = atoi(s);
-    printf("y: ");
-    fgets(s, sizeof(s), stdin);
-    y = atoi(s);
-    printf("%li \n", x + y);
+    long x = get_int("x: ");
+    long y = get_int("y: ");
+
+    float z = (double) x / (double) y;
+    
+    printf("%.20f \n", z);
+}
+
+int get_int(const char *prompt)
+{
+    char s [64];
+    printf("%s", prompt);
+    fgets (s, sizeof(s), stdin);
+    return atoi(s);
 }
