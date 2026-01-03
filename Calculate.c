@@ -11,5 +11,5 @@ int main(void)
     printf("y: ");
     fgets(s, sizeof(s), stdin);
     y = atoi(s);
-    printf("%i\n", x+y);
+    printf("%i \n", x+y);
 }
