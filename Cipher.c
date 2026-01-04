@@ -25,7 +25,7 @@ char *get_string (const char *string)
     printf("%s", string);
     fgets (buff, sizeof(buff), stdin);
 
-    char *result = malloc(strlen(buff) + 1);
+    char *result = malloc(strlen(buff) + 1); //memory allocate
     strcpy (result, buff);
     return result;
 }
