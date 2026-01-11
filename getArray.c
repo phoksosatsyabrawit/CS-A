@@ -3,7 +3,7 @@
 
 int get_int (char *prompt);
 float average (int arr []);
-const int n = 4;
+const int n = 3;
 
 int main (void)
 {
@@ -28,11 +28,13 @@ int get_int (char *prompt)
 float average (int arr [])
 {
     int sum = 0;
+    // #dynamic loop
+    // go through loop and keep adding to sum which is intially zero whatever is in Array bracket i
     for (int i=0; i < n; i++)
     {
-        sum = sum + arr [i];
+        sum += arr [i]; //recap for adding thing syntax
     }
     return sum / (float) n; 
-
+    // manual hardcode
     /* return (arr [0] + arr [1] + arr [2] )/ (float) n; */
 }
